@@ -1,59 +1,38 @@
-# ProductsApp
+# CoursesApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.4.
+A simple Angular application for browsing and purchasing courses.
 
-## Development server
+## Application Logic
 
-To start a local development server, run:
+### Features
+- **Course Catalog**: Displays a list of available courses with details like title, instructor, price, seats, and image.
+- **Category Filtering**: Filter courses by category (All, Programming, Design, Marketing, Business).
+- **Discount System**: Apply a discount percentage to course prices.
+- **Purchase Logic**:
+  - Enter quantity for each course.
+  - Click "Buy" button to add to total order price.
+  - Button shows "Processing" and disables for 3 seconds after click.
+  - After 3 seconds, button re-enables if seats are available.
+- **Order Summary**: Displays total order price with applied discount.
 
-```bash
-ng serve
-```
+### Components
+- **Home**: Static welcome page.
+- **About Us**: Static information page.
+- **Contact Us**: Static contact page.
+- **Courses**: Main component with course listing and purchase functionality.
+- **Not Found**: 404 page for invalid routes.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Services
+- **StaticCourses**: Provides course data with methods `getCoursesByCatID()` and `getCourseByID()`.
+- **CategoriesService**: Provides category data with `getAllCategories()`.
 
-## Code scaffolding
+### Routing
+- Default route redirects to `/home`.
+- Routes: `/home`, `/about-us`, `/contact-us`, `/courses`, `/login`.
+- Wildcard route for 404 handling.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Development
 
-```bash
-ng generate component component-name
-```
+Run `npm install` to install dependencies, then `ng serve` to start the development server.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Navigate to `http://localhost:4200/` to view the app.
